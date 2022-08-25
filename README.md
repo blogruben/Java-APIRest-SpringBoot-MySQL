@@ -1,24 +1,53 @@
 # APP
 API Rest para hacer un CRUD de usuarios con Springboot-Boot
 
-# Flujo de proceso
-El controller recibe la peticion web que llama al servicio
-El servicio ejecuta la logica de la aplicacion que llama al repositorio
-El repositorio hace las conexiones con la bbdd 
-que a su vez utiliza el modelo para saber que tipo de informacion va a traer.
+# Instalar MySQL
+1 Instalamos MySQL `https://dev.mysql.com/downloads/mysql/`
+2 Añadir variable a la consola `export PATH=${PATH}:/usr/local/mysql/bin`
+3 Conectar `mysql -u root -p` 
+4 Crear BBDD `CREATE DATABASE Agente; SHOW databases; USE Agente;`
 
-# Iniciar proyecto
-Como se inicializa el proyecto vacio como SpringBoot
-libreriasy tal ....
-
-# Requisitos
-Tener la BBDD MySQL y la bbdd llamada springboot
-
-# Ejecutar
+# Ejecutar Aplicacion
 En Windows
 `mvnw.cmd spring-boot:run`
 En mac:
 `./mvnw spring-boot:run`
 
-# Probardo la API
+# Probando la API
 
+## Create Update Usuario 
+POST `localhost:8080/usuario`
+en el BODY RAW ponemos el usuario para guardar:
+```
+{
+    "nombre": "maria",
+    "email": "maria@mail.com",
+    "prioridad": 4
+}
+```
+
+## Leer todos los usuarios
+`localhost:8080/usuario`
+
+## Leer usuario por ID
+`localhost:8080/usuario/1`
+
+## Leer usuario por prioridad
+`localhost:8080/usuario/query?prioridad=4`
+
+# Flujo del código
+El controller recibe la peticion web que llama al servicio
+El servicio ejecuta la logica de la aplicacion que llama al repositorio
+El repositorio hace las conexiones con la bbdd 
+que a su vez utiliza el modelo para saber que tipo de informacion va a traer.
+
+# Librerías
+Como se inicializa el proyecto vacio como SpringBoot 
+con https://start.spring.io/ añadimos las librerías:
+Project maven
+Language Java
+Packaging War
+Java 11
+Librerías
+- Spring Data JPA
+- MySQL Driver
