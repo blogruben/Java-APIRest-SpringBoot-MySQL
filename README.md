@@ -53,3 +53,21 @@ Con https://start.spring.io/ añadimos las librerías:
 - Librerías:
  - Spring Data JPA
  - MySQL Driver
+
+
+@startuml
+Entity01 }|..|| Entity02
+Entity03 }o..o| Entity04
+Entity05 ||--o{ Entity06
+Entity07 |o--|| Entity08
+@enduml
+
+
+```plantuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+   
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+```
+
