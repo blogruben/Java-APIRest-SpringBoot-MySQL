@@ -62,7 +62,6 @@ MySQL contiene una bbdd Colegio que contiene
 estas dos tablas llamadas (student, classroom)
 
 ```mermaid
-sequenceDiagram
 erDiagram
     STUDENT ||--o{ CLASSROOM : assign
     STUDENT {
