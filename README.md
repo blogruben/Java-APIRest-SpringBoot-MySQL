@@ -56,34 +56,28 @@ Con https://start.spring.io/ añadimos las librerías:
 
 
 
+# MER 
 
-```plantuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-   
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: Another authentication Response
-```
-
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
-
+MySQL contiene una bbdd Colegio que contiene 
+estas dos tablas llamadas (student, classroom)
 
 ```mermaid
 sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom->>iframe: loads html w/ iframe url
-    iframe->>viewscreen: request template
-    viewscreen->>iframe: html & javascript
-    iframe->>dotcom: iframe ready
-    dotcom->>iframe: set mermaid data on iframe
-    iframe->>iframe: render mermaid
+erDiagram
+    STUDENT ||--o{ CLASSROOM : assign
+    STUDENT {
+        int Id
+        string name
+        string surname
+        boolean isfFeePaid
+        date registration_date
+    }
+    CLASSROOM {
+        int classId
+        int title
+        string description
+        string teacher_Name
+        int level
+    }
 ```
 
